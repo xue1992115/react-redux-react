@@ -27,8 +27,9 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
+import { Provider } from 'react-redux'
 import App from './App'
-import { counter, addGun, removeGun, asynGun } from './index.redux'
+import { counter } from './index.redux'
 // 激活中间件的方法
 const store = createStore(
   counter,
@@ -41,16 +42,10 @@ const store = createStore(
 //一、采用组件传递参数的方式，将store传入
 //二、 组件内部通过this.props.store获取属性，以及方法
 //三、采用store.subscribe()方法，注册监听事件，当state改变时，重新渲染一下。
-function render() {
-  ReactDom.render(
-    <App
-      store={store}
-      addGun={addGun}
-      removeGun={removeGun}
-      asynGun={asynGun}
-    />,
-    document.getElementById('root')
-  )
-}
-render()
-store.subscribe(render)
+
+ReactDom.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)
