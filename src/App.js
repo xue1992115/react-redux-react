@@ -1,6 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addGun, removeGun, asynGun } from './index.redux'
+// const actionCreators = { addGun, removeGun, asynGun }
+// const mapStatetoProps = state => {
+//   return { num: state }
+// }
+
+//通过 connect方法将属性绑定在store，然后将store作为props传递下去
+// App = connect(
+//   mapStatetoProps,
+//   actionCreators
+// )(App)
+
+//采用装饰器的方法
+@connect(
+  state => ({ num: state }),
+  { addGun, removeGun, asynGun }
+)
 class App extends React.Component {
   render() {
     return (
@@ -16,12 +32,5 @@ class App extends React.Component {
     )
   }
 }
-const mapStatetoProps = state => {
-  return { num: state }
-}
-const actionCreators = { addGun, removeGun, asynGun }
-App = connect(
-  mapStatetoProps,
-  actionCreators
-)(App)
+
 export default App

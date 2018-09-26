@@ -43,6 +43,7 @@ const store = createStore(
 //二、 组件内部通过this.props.store获取属性，以及方法
 //三、采用store.subscribe()方法，注册监听事件，当state改变时，重新渲染一下。
 
+// Provider的作用是使组件可被链接
 ReactDom.render(
   <Provider store={store}>
     <App />

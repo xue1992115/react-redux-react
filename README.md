@@ -53,4 +53,6 @@ react-redux 提供了两个接口来链接，provider，connect
 
 - 具体使用 Provider 组件在应用的最外层，传入 store 即可，只用一次 Provider 的目的是使 react 组件可被链接
 - connect 负责从外部获取组件需要的参数，属性和方法。connect 把 React 组件和 Redux 的 store 真正连接起来。
-- connect 可以使用装饰器的方法写
+- connect 可以使用装饰器的方法写，就是一个@符号，使用装饰器优化代码
+
+\* npmrun eject 弹出个性化的配置
