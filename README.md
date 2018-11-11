@@ -55,4 +55,16 @@ react-redux 提供了两个接口来链接，provider，connect
 - connect 负责从外部获取组件需要的参数，属性和方法。connect 把 React 组件和 Redux 的 store 真正连接起来。
 - connect 可以使用装饰器的方法写，就是一个@符号，使用装饰器优化代码
 
-\* npmrun eject 弹出个性化的配置
+\* npm run eject 弹出个性化的配置
+
+## react-router4
+
+核心概念：动态路由，Route，Link，Switch，入门组件：
+
+- BrowsersRouter,包裹整个应用
+- Router 路由对应渲染组件，可嵌套
+- Link 跳转专用
+- 其他组件
+  - url 参数，Route 组件参数可用冒号标识参数
+  - Redirect,组件跳转
+  - switch 只渲染一个子 Route 组件

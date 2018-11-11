@@ -14,7 +14,9 @@ import { addGun, removeGun, asynGun } from './index.redux'
 
 //采用装饰器的方法
 @connect(
-  state => ({ num: state }),
+  // 你要state什么属性放在props里
+  state => ({ num: state.counter }),
+  //你要什么方法，放到props，自动dispatch
   { addGun, removeGun, asynGun }
 )
 class App extends React.Component {
