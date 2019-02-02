@@ -1,22 +1,62 @@
 import React from 'react'
+import { List, InputItem, Radio, WhiteSpace, Button } from 'antd-mobile'
 import Logo from '../../components/logo/logo'
-import { WingBlank, WhiteSpace, Button} from 'antd-mobile'
 
+const RadioItem = Radio.RadioItem;
 class Register extends React.Component{
   constructor(props){
     super(props);
-    this.register = this.register.bind(this);
+    this.state = {
+      user: '',
+      pwd: '',
+      repeatpwd:'',
+      type: 'genius',  //或者 boss
+    }
+    this.handleRegister = this.handleRegister.bind(this); 
+  }
+  handleChange(key,value){
+    this.setState({
+      [key]: value
+    })
+  }
+  handleRegister(){
+    console.log(this.state);
+    
   }
   render(){
     return (
     <div>
     <Logo />
-    <h2>注册页面</h2>
-    <WingBlank>
-      <Button type="primary">登录</Button>
+    <List>
+      <InputItem
+        onChange={v => this.handleChange('user',v)}
+      >用户名</InputItem>
       <WhiteSpace />
-      <Button type="primary">注册</Button>
-    </WingBlank>
+      <InputItem
+        type='password'
+        onChange={v => this.handleChange('pwd',v)}
+      >密码</InputItem>
+      <WhiteSpace />
+      <InputItem
+        type='password'
+        onChange={v => this.handleChange('repeatpwd',v)}
+      >确认密码</InputItem>
+      <WhiteSpace />
+      <RadioItem 
+        onChange={v => this.handleChange('type','genius')}
+        checked = {this.state.type === 'genius'} 
+      >
+        牛人
+      </RadioItem>
+      <WhiteSpace />
+      <RadioItem
+        onChange={v => this.handleChange('type','boss')}
+        checked = {this.state.type === 'boss'} 
+      >
+        BOSS
+      </RadioItem>
+      <Button type="primary" onClick={this.handleRegister}></Button>
+    </List>
   </div>)
   }
 }
