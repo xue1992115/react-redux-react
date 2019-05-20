@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom'
 import Login from './container/login/login';
 import Register from './container/register/register';
+import Test from './container/test/test';
 import reducers from './reducer';
 import AuthRoute from './components/authroute/authroute'
 import './config';
@@ -31,6 +32,7 @@ ReactDom.render(
         <Route path='/boss' component={Boss}></Route>
         <Route path='/login' component={Login}></Route>
         <Route path='/register' component={Register}></Route>
+        <Route path='/test' component={Test}></Route>
       </div>
     </BrowserRouter>
   </Provider>,
