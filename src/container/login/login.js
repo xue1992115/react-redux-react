@@ -1,22 +1,22 @@
 import React from 'react'
-import { WingBlank, WhiteSpace, Button, List, InputItem} from 'antd-mobile'
+import { WingBlank, WhiteSpace, Button, List, InputItem, Flex} from 'antd-mobile'
 import Logo from '../../components/logo/logo'
 
 class Login extends React.Component{
   constructor(props){
     super(props);
+    /** 绑定this */
     this.register = this.register.bind(this);  
   }
   register = ()=>{
-    // 路由组件包含 this.props.history属性
+    // react-router-dom路由组件包含history属性
     this.props.history.push('./register');
-    // console.log(this.props,'this.props')
   }
   render(){
     return (
     <div>
       <Logo />
-      <h2>登录页面</h2>
+      <div style={{display: 'flex',justifyContent:'center'}}><h2>登录页面</h2></div>
       <WingBlank>
         <List>
           <InputItem>用户</InputItem>

@@ -66,17 +66,9 @@ class MyApp {
 }
 const app = new MyApp();
 app.sayHello()
-
-
 //7、es6中的数据结构
 // set 、Map、Symbol
-
-
-
-
 //8、模块化机制
-
-
 //其他特性
 
 
