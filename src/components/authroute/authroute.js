@@ -10,15 +10,15 @@ import { withRouter } from 'react-router-dom'
        return null;
      }
      
-    //  获取用户信息
-    // axios.get('/user/info').then(res => {
-    //   if(res.status === 200){
-    //     if(res.data.code === 0){
-    //     }else{
-    //       this.props.history.push('/login');
-    //     }
-    //   }
-    // })
+    // 判断用户是否登录
+    axios.get('/user/info').then(res => {
+      if(res.status === 200){
+        if(res.data.code === 0){
+        }else{
+          this.props.history.push('/login');
+        }
+      }
+    })
     // 是否登录
     // 现在的url地址，是否需要跳转
     // 用户的type,是boss还是牛人

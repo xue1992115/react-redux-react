@@ -32,6 +32,7 @@ class Register extends React.Component {
       [key]: value
     });
   }
+  /** 注册用户 */
   handleRegister() {
     console.log(this.state);
   }
